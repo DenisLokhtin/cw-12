@@ -17,7 +17,7 @@ const storage = multer.diskStorage({
   }
 });
 
-router.get('/', auth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const images = await Image.find().populate('author');
     res.send(images);
@@ -37,7 +37,7 @@ router.get('/author', auth, async (req, res) => {
   }
 });
 
-router.get('/user/:id', auth, async (req, res) => {
+router.get('/user/:id', async (req, res) => {
   try {
     const images = await Image.find({author: req.params.id}).populate('author');
     res.send(images);

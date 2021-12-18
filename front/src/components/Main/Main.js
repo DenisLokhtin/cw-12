@@ -10,10 +10,19 @@ import {Link} from "react-router-dom";
 const Main = (props) => {
     const dispatch = useDispatch();
     const images = useSelector(state => state.reducer.images);
+    const user = useSelector(state => state.users.user);
 
     useEffect(() => {
         dispatch(fetchImagesRequest())
     }, [dispatch]);
+
+    const printButton = () => {
+        if (user) {
+            return (
+                <Link to='/MyImages' className="newImages">My Images</Link>
+            )
+        }
+    };
 
     const printImages = () => {
         if (images) {
@@ -36,7 +45,7 @@ const Main = (props) => {
         <div>
             <div className="main-header">
                 <h2>Images list</h2>
-                <Link to='/MyImages' className="newImages">My Images</Link>
+                {printButton()}
             </div>
             <div className="cards">
                 {printImages()}

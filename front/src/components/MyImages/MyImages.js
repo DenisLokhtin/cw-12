@@ -7,10 +7,19 @@ import {fetchMyImagesRequest} from "../../store/actions/actions";
 const MyImages = (props) => {
     const dispatch = useDispatch();
     const images = useSelector(state => state.reducer.images);
+    const user = useSelector(state => state.users.user);
 
     useEffect(() => {
         dispatch(fetchMyImagesRequest())
     }, [dispatch]);
+
+    const printButton = () => {
+        if (user) {
+            return (
+                <Link to='/newImage' className="newImages">New image</Link>
+            )
+        }
+    };
 
     const printImages = () => {
         if (images) {
@@ -34,7 +43,7 @@ const MyImages = (props) => {
         <div>
             <div className="main-header">
                 <h2>My images list</h2>
-                <Link to='/newImage' className="newImages">New image</Link>
+                {printButton()}
             </div>
             <div className="cards">
                 {printImages()}

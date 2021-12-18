@@ -20,6 +20,7 @@ const imagesSlice = createSlice({
             state.fetchLoadingImages = false;
         },
         fetchMyImagesRequest(state, action) {
+            state.images = [];
             state.fetchLoadingImages = true;
         },
         fetchUserImagesRequest(state, action) {
