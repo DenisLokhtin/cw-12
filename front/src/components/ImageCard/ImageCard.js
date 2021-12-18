@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './ImageCard.css'
 import PopImage from "../PopImage/PopImage";
+import {Link} from "react-router-dom";
 
 const ImageCard = (props) => {
     const [show, setShow] = useState(false);
@@ -13,12 +14,24 @@ const ImageCard = (props) => {
         }
     };
 
+    const deleteButton = () => {
+        if (props.delete) {
+            return (
+                <p className="delete">
+                    Delete
+                </p>
+            )
+        }
+    };
+
     return (
         <>
             <div className="ImageCard">
                 <img onClick={() => setShow(true)} src={'http://localhost:8001/' + props.image} alt=""/>
                 <h3>{props.title}</h3>
-                <p>By: <span className="author">{props.author}</span></p>
+                <p>By: <Link to="/users/:id/images"
+                             className="author">{props.author.displayName}</Link></p>
+                {deleteButton()}
             </div>
             <PopImage
                 display={openModal()}

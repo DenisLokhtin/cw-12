@@ -10,7 +10,6 @@ const NewImage = (props) => {
     const [data, setData] = useState({
         title: '',
         image: null,
-        author: user.displayName,
     });
 
     const onSubmit = (e) => {

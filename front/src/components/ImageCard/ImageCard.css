@@ -38,3 +38,12 @@
     cursor: pointer;
     user-select: none;
 }
+
+.delete {
+    font-weight: 600;
+    font-size: 18px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
+}

@@ -16,8 +16,8 @@ const Main = (props) => {
     }, [dispatch]);
 
     const printImages = () => {
-        return images.map((images, index) => {
-            if (images) {
+        if (images) {
+            return images.map((images, index) => {
                 return (
                     <ImageCard
                         key={images._id}
@@ -27,8 +27,8 @@ const Main = (props) => {
                         index={index}
                     />
                 )
-            }
-        })
+            })
+        }
     };
 
     return (
@@ -36,7 +36,6 @@ const Main = (props) => {
             <div className="main-header">
                 <h2>Images list</h2>
                 <Link to='/MyImages' className="newImages">My Images</Link>
-                <Link to='/newImage' className="newImages">New Images</Link>
             </div>
             <div className="cards">
                 {printImages()}

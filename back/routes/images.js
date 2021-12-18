@@ -19,7 +19,27 @@ const storage = multer.diskStorage({
 
 router.get('/', auth, async (req, res) => {
   try {
-    const images = await Image.find({});
+    const images = await Image.find().populate('author');
+    res.send(images);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
+router.get('/author', auth, async (req, res) => {
+  try {
+    const images = await Image.find({author: req.user._id}).populate('author');
+    res.send(images);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
+  }
+});
+
+router.get('/author', auth, async (req, res) => {
+  try {
+    const images = await Image.find({author: req.params.id}).populate('author');
     res.send(images);
   } catch (e) {
     console.log(e);
@@ -33,7 +53,7 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
   console.log(req.body);
   const body = {
     title: req.body.title,
-    author: req.body.author,
+    author: req.user._id,
   };
 
   if (req.file) {

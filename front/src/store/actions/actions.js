@@ -4,6 +4,7 @@ import imagesSlice from "../slices/imagesSlice";
 
 export const {
     fetchImagesRequest,
+    fetchMyImagesRequest,
     fetchImagesSuccess,
     fetchImagesFailure,
 } = imagesSlice.actions;
