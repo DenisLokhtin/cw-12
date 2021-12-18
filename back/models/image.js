@@ -11,6 +11,10 @@ const ImageSchema = new Schema({
     type: String,
     required: true,
   },
+  author: {
+    type: String,
+    required: true,
+  },
 });
 
 const Image = mongoose.model('Image', ImageSchema);

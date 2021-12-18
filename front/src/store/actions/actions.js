@@ -9,11 +9,11 @@ export const {
 } = imagesSlice.actions;
 
 
-export const createCocktail = data => {
+export const createImage = data => {
     return async () => {
         try {
             await axiosApi.post('/images', data, {"content-type": "multipart/form-data"});
-            toast.success('cocktail Created');
+            toast.success('Image Created');
         } catch (e) {
             console.log(e)
         }

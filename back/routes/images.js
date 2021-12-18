@@ -33,6 +33,7 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
   console.log(req.body);
   const body = {
     title: req.body.title,
+    author: req.body.author,
   };
 
   if (req.file) {

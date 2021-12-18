@@ -1,0 +1,31 @@
+.ImageCard {
+    border: 2px solid black;
+    margin: 10px;
+    padding: 5px;
+    width: 290px;
+    border-radius: 2px;
+    word-wrap: break-word;
+    cursor: pointer;
+    user-select: none;
+}
+
+.ImageCard div {
+    text-align: left;
+}
+
+.ImageCard img {
+    width: 280px;
+    height: 290px;
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.ImageCard h3 {
+    text-align: left;
+    margin-left: 8px;
+}
+
+.ImageCard p {
+    text-align: left;
+    margin-left: 8px;
+}

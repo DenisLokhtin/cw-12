@@ -13,8 +13,8 @@ const app = (
     <Provider store={store}>
       <BrowserRouter history={history}>
         <ToastContainer
-            position="bottom-left"
-            autoClose={2000}
+            position="bottom-right"
+            autoClose={3000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick

@@ -1,6 +1,6 @@
 import {Route, Routes} from "react-router-dom";
 import Main from "./components/Main/Main";
-import myImage from "./components/myImage/myImage";
+import MyImages from "./components/MyImages/MyImages";
 import Register from "./containers/Register/Register";
 import Login from "./containers/Login/Login";
 import NewImage from "./containers/NewImage/NewImage";
@@ -20,7 +20,7 @@ const App = () => {
                         <Route path="/register" exact element={<Register/>}/>
                         <Route path="/login" exact element={<Login/>}/>
                         <Route path="/newImage" exact element={<NewImage/>}/>
-                        <Route path="/myImages" exact element={<myImage/>}/>
+                        <Route path="/myImages" exact element={<MyImages/>}/>
                     </Routes>
                 </div>
             </div>
