@@ -37,9 +37,10 @@ router.get('/author', auth, async (req, res) => {
   }
 });
 
-router.get('/author', auth, async (req, res) => {
+router.get('/user/:id', auth, async (req, res) => {
   try {
     const images = await Image.find({author: req.params.id}).populate('author');
+    console.log(images)
     res.send(images);
   } catch (e) {
     console.log(e);

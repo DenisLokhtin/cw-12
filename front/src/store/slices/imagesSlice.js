@@ -22,6 +22,9 @@ const imagesSlice = createSlice({
         fetchMyImagesRequest(state, action) {
             state.fetchLoadingImages = true;
         },
+        fetchUserImagesRequest(state, action) {
+            state.fetchLoadingImages = true;
+        },
     }
 });
 

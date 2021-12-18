@@ -26,20 +26,21 @@ const ImageCard = (props) => {
 
     return (
         <>
-            <div className="ImageCard">
-                <img onClick={() => setShow(true)} src={'http://localhost:8001/' + props.image} alt=""/>
-                <h3>{props.title}</h3>
-                <p>By: <Link to="/users/:id/images"
-                             className="author">{props.author.displayName}</Link></p>
-                {deleteButton()}
-            </div>
-            <PopImage
-                display={openModal()}
-                close={() => setShow(false)}
-                img={'http://localhost:8001/' + props.image}
-            />
-        </>
-    );
+        <div className="ImageCard">
+            <img onClick={() => setShow(true)} src={'http://localhost:8001/' + props.image} alt=""/>
+            <h3>{props.title}</h3>
+            <p>By: <Link to={"/users/" + props.author._id + "/images"}
+                className="author">{props.author.displayName}</Link></p>
+        {deleteButton()}
+        </div>
+    <PopImage
+        display={openModal()}
+        close={() => setShow(false)}
+        img={'http://localhost:8001/' + props.image}
+    />
+</>
+)
+    ;
 };
 
 export default ImageCard;
