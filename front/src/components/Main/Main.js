@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchImagesRequest} from "../../store/actions/actions";
 import './Main.css'
 import ImageCard from "../ImageCard/ImageCard";
+import PopImage from "../PopImage/PopImage";
 import {Link} from "react-router-dom";
 
 

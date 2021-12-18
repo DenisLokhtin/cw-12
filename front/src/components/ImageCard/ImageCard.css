@@ -5,8 +5,6 @@
     width: 290px;
     border-radius: 2px;
     word-wrap: break-word;
-    cursor: pointer;
-    user-select: none;
 }
 
 .ImageCard div {
@@ -18,6 +16,8 @@
     height: 290px;
     border-radius: 3px;
     border: 1px solid black;
+    cursor: pointer;
+    user-select: none;
 }
 
 .ImageCard h3 {
@@ -28,4 +28,13 @@
 .ImageCard p {
     text-align: left;
     margin-left: 8px;
+}
+
+.author {
+    font-weight: 600;
+    font-size: 18px;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    user-select: none;
 }

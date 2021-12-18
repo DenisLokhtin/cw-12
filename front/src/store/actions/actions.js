@@ -1,8 +1,6 @@
 import {toast} from "react-toastify";
 import axiosApi from "../../axiosApi";
 import imagesSlice from "../slices/imagesSlice";
-import {historyPush} from "./historyActions";
-import {useDispatch} from "react-redux";
 
 export const {
     fetchImagesRequest,
