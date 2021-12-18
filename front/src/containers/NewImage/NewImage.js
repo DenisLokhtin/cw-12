@@ -37,12 +37,10 @@ const NewImage = (props) => {
         });
     };
 
-    console.log(data)
-
     return (
         <form onSubmit={onSubmit}>
             <p>
-                <input onChange={inputChangeHandler} name="title" type="text" placeholder="title" required={true}/>
+                <textarea className="input" onChange={inputChangeHandler} rows="5" cols="30" name="title" placeholder="title" required={true}/>
             </p>
             <p>
                 <input name="image" onChange={fileChangeHandler} type="file" required={true}/>

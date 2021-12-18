@@ -21,6 +21,7 @@ const Main = (props) => {
                 return (
                     <ImageCard
                         key={images._id}
+                        id={images._id}
                         image={images.image}
                         title={images.title}
                         author={images.author}

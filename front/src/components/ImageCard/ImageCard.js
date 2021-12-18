@@ -2,8 +2,12 @@ import React, {useState} from 'react';
 import './ImageCard.css'
 import PopImage from "../PopImage/PopImage";
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {ImagesDeleteRequest} from "../../store/actions/actions";
 
 const ImageCard = (props) => {
+    const dispatch = useDispatch();
+
     const [show, setShow] = useState(false);
 
     const openModal = () => {
@@ -14,10 +18,14 @@ const ImageCard = (props) => {
         }
     };
 
+    const onDelete = () => {
+        dispatch(ImagesDeleteRequest(props.id));
+    };
+
     const deleteButton = () => {
         if (props.delete) {
             return (
-                <p className="delete">
+                <p onClick={onDelete} className="delete">
                     Delete
                 </p>
             )

@@ -8,6 +8,7 @@ export const {
     fetchUserImagesRequest,
     fetchImagesSuccess,
     fetchImagesFailure,
+    ImagesDeleteRequest
 } = imagesSlice.actions;
 
 export const createImage = data => {

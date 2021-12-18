@@ -20,6 +20,7 @@ const MyImages = (props) => {
                         key={images._id}
                         image={images.image}
                         title={images.title}
+                        id={images._id}
                         author={images.author}
                         delete={true}
                         index={index}

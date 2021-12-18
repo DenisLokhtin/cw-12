@@ -40,7 +40,6 @@ router.get('/author', auth, async (req, res) => {
 router.get('/user/:id', auth, async (req, res) => {
   try {
     const images = await Image.find({author: req.params.id}).populate('author');
-    console.log(images)
     res.send(images);
   } catch (e) {
     console.log(e);
@@ -51,7 +50,6 @@ router.get('/user/:id', auth, async (req, res) => {
 const upload = multer({storage});
 
 router.post('/', auth, upload.single('image'), async (req, res) => {
-  console.log(req.body);
   const body = {
     title: req.body.title,
     author: req.user._id,
@@ -69,6 +67,16 @@ router.post('/', auth, upload.single('image'), async (req, res) => {
   } catch (e) {
     console.log(e);
     res.sendStatus(400);
+  }
+});
+
+router.delete('/:id', auth, async (req, res) => {
+  try {
+    const images = await Image.deleteOne({_id: req.params.id, author: req.user._id});
+    res.send(images);
+  } catch (e) {
+    console.log(e);
+    res.sendStatus(500);
   }
 });
 

@@ -25,6 +25,9 @@ const imagesSlice = createSlice({
         fetchUserImagesRequest(state, action) {
             state.fetchLoadingImages = true;
         },
+        ImagesDeleteRequest(state, action) {
+            state.fetchLoadingImages = true;
+        },
     }
 });
 
