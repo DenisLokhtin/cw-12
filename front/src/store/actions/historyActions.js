@@ -2,6 +2,7 @@ import history from "../../history";
 
 export const historyPush = payload => {
     return () => {
+        console.log('push');
         history.push(payload);
     };
 };

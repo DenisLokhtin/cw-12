@@ -38,15 +38,6 @@ const Main = (props) => {
                 <Link to='/newImage' className="newImages">New Images</Link>
             </div>
             <div className="cards">
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
-                <ImageCard/>
                 {printImages()}
             </div>
         </div>

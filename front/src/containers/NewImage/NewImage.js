@@ -43,10 +43,10 @@ const NewImage = (props) => {
     return (
         <form onSubmit={onSubmit}>
             <p>
-                <input onChange={inputChangeHandler} name="title" type="text" placeholder="title"/>
+                <input onChange={inputChangeHandler} name="title" type="text" placeholder="title" required={true}/>
             </p>
             <p>
-                <input name="image" onChange={fileChangeHandler} type="file"/>
+                <input name="image" onChange={fileChangeHandler} type="file" required={true}/>
             </p>
             <button>Create</button>
         </form>

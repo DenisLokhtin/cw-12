@@ -26,9 +26,9 @@ const Register = () => {
         <div>
             <form onSubmit={submitFormHandler} className="authorization">
                 <h2>Register</h2>
-                <input name="email" value={user.email} onChange={e => (inputChangeHandler(e))} type="text" placeholder="email" autoComplete="on"/>
-                <input name="displayName" value={user.displayName} onChange={e => (inputChangeHandler(e))} type="text" placeholder="display Name" autoComplete="on"/>
-                <input name="password" value={user.password} onChange={e => (inputChangeHandler(e))} type="password" placeholder="Password" autoComplete="on"/>
+                <input name="email" value={user.email} onChange={e => (inputChangeHandler(e))} type="text" placeholder="email" autoComplete="on" required={true}/>
+                <input name="displayName" value={user.displayName} onChange={e => (inputChangeHandler(e))} type="text" placeholder="display Name" autoComplete="on" required={true}/>
+                <input name="password" value={user.password} onChange={e => (inputChangeHandler(e))} type="password" placeholder="Password" autoComplete="on" required={true}/>
                 <button>Send</button>
             </form>
         </div>

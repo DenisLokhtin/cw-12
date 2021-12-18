@@ -25,8 +25,8 @@ const Login = () => {
         <div>
             <form onSubmit={submitFormHandler} className="authorization">
                 <h2>Login</h2>
-                <input name="email" value={user.email} onChange={e => (inputChangeHandler(e))} type="text" placeholder="email" autoComplete="on"/>
-                <input name="password" value={user.password} onChange={e => (inputChangeHandler(e))} type="password" placeholder="Password" autoComplete="on"/>
+                <input name="email" value={user.email} onChange={e => (inputChangeHandler(e))} type="text" placeholder="email" autoComplete="on" required={true}/>
+                <input name="password" value={user.password} onChange={e => (inputChangeHandler(e))} type="password" placeholder="Password" autoComplete="on" required={true}/>
                 <FacebookLogin classname="facebook"/>
                 <button onClick={() => dispatch(loginUser({...user}))} className="send">Send</button>
             </form>

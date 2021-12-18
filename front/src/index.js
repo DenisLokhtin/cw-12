@@ -11,7 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const app = (
     <Provider store={store}>
-      <BrowserRouter history={history}>
+      <BrowserRouter navigator={history}>
         <ToastContainer
             position="bottom-right"
             autoClose={3000}
